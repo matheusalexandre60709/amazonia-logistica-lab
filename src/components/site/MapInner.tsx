@@ -2,18 +2,13 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline, LayerGroup, LayersCon
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-// Fix default marker icons (Leaflet looks for assets that bundlers don't resolve)
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
-
-// @ts-expect-error - patch internal
-delete L.Icon.Default.prototype._getIconUrl;
+// Use CDN URLs for default marker icons (avoids bundler asset resolution issues)
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
+  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 });
+
 
 type Point = { name: string; uf: string; coords: [number, number]; note: string };
 
