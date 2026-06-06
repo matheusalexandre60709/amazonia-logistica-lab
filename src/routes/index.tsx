@@ -5,6 +5,7 @@ import { About } from "@/components/site/About";
 import { Problem } from "@/components/site/Problem";
 import { Results } from "@/components/site/Results";
 import { Comparison } from "@/components/site/Comparison";
+import { InteractiveMap } from "@/components/site/InteractiveMap";
 import { Flow } from "@/components/site/Flow";
 import { Solutions } from "@/components/site/Solutions";
 import { References } from "@/components/site/References";
@@ -52,6 +53,7 @@ function Index() {
         <Problem />
         <Results />
         <Comparison />
+        <InteractiveMap />
         <Flow />
         <Solutions />
         <References />

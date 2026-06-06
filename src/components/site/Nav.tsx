@@ -6,6 +6,7 @@ const links = [
   { href: "#problema", label: "Problema" },
   { href: "#resultados", label: "Resultados" },
   { href: "#comparacao", label: "Comparação" },
+  { href: "#mapa", label: "Mapa" },
   { href: "#fluxo", label: "Fluxo" },
   { href: "#solucoes", label: "Soluções" },
   { href: "#referencial", label: "Referencial" },
