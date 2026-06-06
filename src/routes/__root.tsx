@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "BR - 230 Transamazônica" },
+      { name: "description", content: "A professional academic website showcasing research on the Transamazônica Highway's impact on Northern Brazil's agricultural logistics." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "BR - 230 Transamazônica" },
+      { property: "og:description", content: "A professional academic website showcasing research on the Transamazônica Highway's impact on Northern Brazil's agricultural logistics." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "BR - 230 Transamazônica" },
+      { name: "twitter:description", content: "A professional academic website showcasing research on the Transamazônica Highway's impact on Northern Brazil's agricultural logistics." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e6b9b8d3-bfdf-4b29-815c-3967dca669ff/id-preview-92221f5b--fd185ffe-0317-4883-b0cb-a67afdd2e7a2.lovable.app-1780776387076.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e6b9b8d3-bfdf-4b29-815c-3967dca669ff/id-preview-92221f5b--fd185ffe-0317-4883-b0cb-a67afdd2e7a2.lovable.app-1780776387076.png" },
     ],
     links: [
       {
