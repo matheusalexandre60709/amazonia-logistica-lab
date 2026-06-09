@@ -20,19 +20,19 @@ export function Solutions() {
           title="Modernização logística com visão sistêmica e sustentável"
           description="A pesquisa propõe um conjunto integrado de ações que combinam infraestrutura física, tecnologia, governança e responsabilidade socioambiental."
         />
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {solutions.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.05}>
-              <div className="group h-full rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-elevated">
-                <div className="flex items-center justify-between">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg gradient-forest text-primary-foreground">
+              <div className="group h-full rounded-xl border border-border bg-card p-5 sm:p-6 transition-all hover:-translate-y-1 hover:shadow-elevated hover:border-primary/25">
+                <div className="flex items-start justify-between">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg gradient-forest text-primary-foreground shadow-sm">
                     <s.icon className="h-5 w-5" />
                   </div>
-                  <span className="text-xs font-semibold text-gold-foreground/70">
-                    0{i + 1}
+                  <span className="text-[11px] font-bold tabular-nums text-gold/50">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-foreground">{s.title}</h3>
+                <h3 className="mt-5 text-base sm:text-lg font-semibold text-foreground leading-snug">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
               </div>
             </Reveal>

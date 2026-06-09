@@ -18,31 +18,36 @@ export function Flow() {
       <img
         src={agro}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover opacity-15"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
         loading="lazy"
         aria-hidden
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/96 to-background" />
+
       <div className="container-x relative">
         <SectionTitle
           eyebrow="Fluxo logístico agroindustrial"
           title="Da lavoura ao porto: a cadeia de escoamento do Norte"
           description="Cada etapa depende de infraestrutura adequada — gargalos em qualquer ponto pressionam custos e prazos ao longo de toda a cadeia."
         />
-        <div className="mt-12 relative">
-          <div className="hidden lg:block absolute top-12 left-12 right-12 h-px bg-gradient-to-r from-primary via-gold to-primary" />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+
+        <div className="mt-10 sm:mt-12 relative">
+          {/* Connector line desktop */}
+          <div className="hidden lg:block absolute top-[2.6rem] left-[4.5%] right-[4.5%] h-px bg-gradient-to-r from-primary/30 via-gold to-primary/30" />
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {steps.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.08}>
-                <div className="relative h-full rounded-xl border border-border bg-card p-5 shadow-sm hover:shadow-elevated transition">
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full gradient-forest text-primary-foreground mb-4">
+              <Reveal key={s.title} delay={i * 0.07}>
+                <div className="relative h-full rounded-xl border border-border bg-card p-4 sm:p-5 shadow-card hover:shadow-elevated transition-all hover:-translate-y-0.5">
+                  {/* Step number */}
+                  <div className="absolute top-3 right-3 text-[10px] font-bold text-gold/60 tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full gradient-forest text-primary-foreground mb-4">
                     <s.icon className="h-5 w-5" />
                   </div>
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-gold-foreground/70">
-                    Etapa {i + 1}
-                  </div>
-                  <h3 className="mt-1 font-semibold text-foreground">{s.title}</h3>
-                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{s.text}</p>
+                  <h3 className="text-xs sm:text-sm font-semibold text-foreground leading-snug">{s.title}</h3>
+                  <p className="mt-1.5 text-[0.7rem] sm:text-xs text-muted-foreground leading-relaxed">{s.text}</p>
                 </div>
               </Reveal>
             ))}

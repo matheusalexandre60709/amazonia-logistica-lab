@@ -1,28 +1,25 @@
-import { Reveal } from "./Reveal";
-
-export function SectionTitle({
-  eyebrow,
-  title,
-  description,
-  align = "left",
-}: {
+interface SectionTitleProps {
   eyebrow: string;
   title: string;
   description?: string;
-  align?: "left" | "center";
-}) {
+  centered?: boolean;
+}
+
+export function SectionTitle({ eyebrow, title, description, centered }: SectionTitleProps) {
   return (
-    <Reveal className={align === "center" ? "text-center mx-auto max-w-3xl" : "max-w-3xl"}>
-      <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-        <span className="h-px w-8 bg-accent" />
+    <div className={`max-w-3xl ${centered ? "mx-auto text-center" : ""}`}>
+      <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+        <span className="h-1.5 w-1.5 rounded-full bg-gold" />
         {eyebrow}
       </div>
-      <h2 className="mt-4 text-3xl md:text-5xl font-semibold text-foreground">{title}</h2>
+      <h2 className="mt-4 text-[clamp(1.6rem,3.5vw,2.5rem)] font-semibold text-foreground">
+        {title}
+      </h2>
       {description && (
-        <p className="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+        <p className="mt-3.5 text-[clamp(0.875rem,1.5vw,1rem)] text-muted-foreground leading-relaxed max-w-2xl">
           {description}
         </p>
       )}
-    </Reveal>
+    </div>
   );
 }

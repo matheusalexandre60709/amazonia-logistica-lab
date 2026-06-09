@@ -44,19 +44,19 @@ export function References() {
           title="Base científica e institucional da pesquisa"
           description="O estudo articula contribuições da logística, geografia econômica e economia dos transportes, com dados oficiais de instituições brasileiras e internacionais."
         />
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {refs.map((r, i) => (
             <Reveal key={r.org} delay={i * 0.05}>
-              <div className="h-full rounded-xl border border-border bg-card p-6 hover:border-accent/40 transition">
+              <div className="h-full rounded-xl border border-border bg-card p-5 sm:p-6 hover:border-accent/40 hover:shadow-card transition-all">
                 <div className="flex items-center gap-3">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-primary/10 text-primary">
-                    <BookOpen className="h-5 w-5" />
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-primary/10 text-primary shrink-0">
+                    <BookOpen className="h-4.5 w-4.5" />
                   </div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-accent">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-accent">
                     {r.org}
                   </span>
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-foreground">{r.title}</h3>
+                <h3 className="mt-4 text-sm sm:text-base font-semibold text-foreground leading-snug">{r.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
               </div>
             </Reveal>
