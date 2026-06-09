@@ -18,7 +18,7 @@ export function InteractiveMap() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <section id="mapa" className="py-20 md:py-28 bg-surface">
+    <section id="mapa" className="section-y bg-surface">
       <div className="container-x">
         <SectionTitle
           eyebrow="Mapa interativo"
@@ -27,7 +27,7 @@ export function InteractiveMap() {
         />
 
         <Reveal className="mt-10">
-          <div className="relative h-[520px] md:h-[620px] w-full overflow-hidden rounded-2xl border border-border shadow-elevated bg-card">
+          <div className="relative h-[420px] sm:h-[520px] md:h-[620px] w-full overflow-hidden rounded-2xl border border-border shadow-elevated bg-card">
             {mounted ? (
               <Suspense
                 fallback={
@@ -46,15 +46,15 @@ export function InteractiveMap() {
           </div>
         </Reveal>
 
-        <Reveal className="mt-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Reveal className="mt-6 sm:mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {legend.map(({ icon: Icon, color, label }) => (
               <div
                 key={label}
-                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-sm"
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-card hover:shadow-elevated transition-shadow"
               >
-                <Icon className={`h-5 w-5 mt-0.5 ${color}`} />
-                <span className="text-sm text-foreground/85 leading-snug">{label}</span>
+                <Icon className={`h-5 w-5 mt-0.5 shrink-0 ${color}`} />
+                <span className="text-sm text-foreground/82 leading-snug">{label}</span>
               </div>
             ))}
           </div>
