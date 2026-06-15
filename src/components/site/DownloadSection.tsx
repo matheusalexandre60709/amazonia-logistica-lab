@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { Download, FileText, ExternalLink } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import pdfAsset from "@/assets/tcc_pdf.asset.json";
 
 export function DownloadSection() {
@@ -40,15 +41,13 @@ export function DownloadSection() {
               <Download className="h-4 w-4" />
               Baixar TCC (PDF)
             </a>
-            <a
-              href={pdfAsset.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/visualizar"
               className="inline-flex items-center gap-2 rounded-lg border border-white/40 bg-white/10 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-white hover:bg-white/18 active:scale-[0.97] transition"
             >
               <ExternalLink className="h-4 w-4" />
               Visualizar online
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>
